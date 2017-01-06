@@ -23,6 +23,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import static android.R.attr.right;
+
 /**
  * We couldn't come up with a good name for this class. Then, we realized
  * that this lesson is about RecyclerView.
@@ -79,7 +81,10 @@ public class GreenAdapter extends RecyclerView.Adapter<GreenAdapter.NumberViewHo
         NumberViewHolder viewHolder = new NumberViewHolder(view);
 
         // TODO (12) Set the text of viewHolderIndex to "ViewHolder index: " + viewHolderCount
-        String viewHolderIndex = "ViewHolder index: " + viewHolderCount;
+        //viewHolder.viewHolderIndex.setText("ViewHolder index: " + viewHolderCount);
+        viewHolder.listItemNumberView.setText("ViewHolder index: " + viewHolderCount);
+        viewHolder.textView.setGravity(right);
+        viewHolder.textView.setText("ViewHolder index: " + viewHolderCount);
 
         // TODO (13) Use ColorUtils.getViewHolderBackgroundColorFromInstance and pass in a Context and the viewHolderCount
         int bg_color = ColorUtils.getViewHolderBackgroundColorFromInstance(context,viewHolderCount);
